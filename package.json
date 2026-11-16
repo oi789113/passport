@@ -1,0 +1,12 @@
+{
+  "name": "passport-model-gallery",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "esbuild viewer.js --bundle --minify --target=es2020 --outfile=viewer.bundle.js",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "dependencies": { "three": "0.170.0" },
+  "devDependencies": { "esbuild": "0.25.12" }
+}
