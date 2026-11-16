@@ -31,3 +31,11 @@
 ## 瑞士护照
 
 采用 2022 年版封面，参考 fedpol 的官方设计及 [Schweizer Pass 22.jpg](https://commons.wikimedia.org/wiki/File:Schweizer_Pass_22.jpg) 扫描；原作品作者为 Schweizerische Eidgenossenschaft / Bundesamt für Polizei（fedpol），扫描上传者 Leichtle。Commons 将该扫描标记为公有领域（PD-ineligible）。字体、白色十字、电子护照标志和压纹位置从扫描中提取；书册及材质为重建，封底采用简化的同色封皮。
+
+## 澳大利亚护照
+
+采用 2022 年起发行的 R 系列外观，参考 [Australian Passport Office 的 R 系列设计介绍](https://www.passports.gov.au/help/australian-passport-design)及 [R-series-cover-front.jpg](https://commons.wikimedia.org/wiki/File:R-series-cover-front.jpg)。原图作者 Australian Government – Australian Passport Office，许可为 [CC BY 3.0 Australia](https://creativecommons.org/licenses/by/3.0/au/)。正背面参考图亦由 Australian Passport Office 提供，SBS 页面转载。改动包括图案提取、细小文字按原尺寸与字距重建、颜色和反射材质重建、封底袋鼠/鸸鹋压纹重建，以及将贴图应用到书册模型。来源与改动说明同时嵌入 GLB。
+
+## 新加坡护照
+
+封面参考 [Singapore Passport.svg](https://commons.wikimedia.org/wiki/File:Singapore_Passport.svg)，作者 มองโกเลีย๔๔，按 [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/) 发布。封面样式以实物照片及 ICA 的生物识别护照设计公告核对。保留原矢量字形、国徽与排版，重建红色封皮、烫金、纸页及书脊；来源信息嵌入 GLB。

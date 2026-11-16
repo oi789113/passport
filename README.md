@@ -2,7 +2,7 @@
 
 网站：https://oi789113.github.io/passport/
 
-同一页面展示美国、台湾、香港、澳门、加拿大及瑞士护照，可通过顶部按钮手动切换，支持拖动旋转、缩放、自动旋转、正背面、重置及下载当前模型。模型按需载入并缓存，连续切换时仅展示最后选中的护照。
+同一页面展示美国、台湾、香港、澳门、加拿大、瑞士、澳大利亚及新加坡护照，可通过顶部按钮手动切换，支持拖动旋转、缩放、自动旋转、正背面、重置及下载当前模型。模型按需载入并缓存，连续切换时仅展示最后选中的护照。
 
 - [美国护照](https://oi789113.github.io/passport/?passport=us)
 - [台湾护照](https://oi789113.github.io/passport/?passport=taiwan)
@@ -10,8 +10,10 @@
 - [澳门护照](https://oi789113.github.io/passport/?passport=macau)
 - [加拿大护照](https://oi789113.github.io/passport/?passport=canada)
 - [瑞士护照](https://oi789113.github.io/passport/?passport=switzerland)
+- [澳大利亚护照](https://oi789113.github.io/passport/?passport=australia)
+- [新加坡护照](https://oi789113.github.io/passport/?passport=singapore)
 
-六份 GLB 均采用米单位，封面为 88 × 125 mm。新增模型的颜色、金属度、粗糙度与封皮法线贴图已内嵌，静态网页可直接显示。
+八份 GLB 均采用米单位，封面为 88 × 125 mm。新增模型的颜色、金属度、粗糙度与封皮法线贴图已内嵌，静态网页可直接显示。
 
 ## 开发
 
@@ -29,4 +31,4 @@ npm run build
 
 台湾封面字形与排版参考：[外交部领事局公布的新版护照封面](https://www.boca.gov.tw/cp-296-5848-c6720-1.html)，2021 年起发行。材质和书册几何为重建。
 
-香港、澳门、加拿大及瑞士封面来源与许可说明见 [ASSET_LICENSES.md](ASSET_LICENSES.md)。Three.js 授权见 `THREE_LICENSE.txt`。
+各封面来源与许可说明见 [ASSET_LICENSES.md](ASSET_LICENSES.md)。Three.js 授权见 `THREE_LICENSE.txt`。
