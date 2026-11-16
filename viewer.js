@@ -5,8 +5,10 @@ import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 import { ModelLibrary } from './model-library.js';
 
 const passports = {
-  us: { title: '美国护照', country: 'UNITED STATES OF AMERICA', description: '深蓝封皮 · 金色压印 · 分层纸页', url: './us_passport.glb', filename: 'us_passport.glb', rotationX: 0 },
-  taiwan: { title: '台湾护照', country: 'TAIWAN', description: '墨绿封皮 · 金色烫印 · 分层纸页', url: './taiwan_passport.glb', filename: 'taiwan_passport.glb', rotationX: Math.PI / 2 },
+  us: { title: '美国护照', country: 'UNITED STATES OF AMERICA', description: '深蓝封皮 · 金色压印 · 分层纸页', url: './us_passport.glb', filename: 'us_passport.glb', rotationX: 0, credit: '封面：Siirski / FireDragonValo', source: 'https://commons.wikimedia.org/wiki/File:United_States_Passport.svg' },
+  taiwan: { title: '台湾护照', country: 'TAIWAN', description: '墨绿封皮 · 金色烫印 · 分层纸页', url: './taiwan_passport.glb', filename: 'taiwan_passport.glb', rotationX: Math.PI / 2, credit: '封面参考：领事事务局', source: 'https://www.boca.gov.tw/cp-296-5848-c6720-1.html' },
+  'hong-kong': { title: '香港护照', country: 'HONG KONG SPECIAL ADMINISTRATIVE REGION', description: '深蓝封皮 · 金色烫印 · 分层纸页', url: './hong_kong_passport.glb', filename: 'hong_kong_passport.glb', rotationX: Math.PI / 2, credit: '封面：Chatsven · CC BY-SA 4.0', source: 'https://github.com/oi789113/passport/blob/main/ASSET_LICENSES.md#香港护照' },
+  macau: { title: '澳门护照', country: 'MACAO SPECIAL ADMINISTRATIVE REGION', description: '深绿封皮 · 金色烫印 · 分层纸页', url: './macau_passport.glb', filename: 'macau_passport.glb', rotationX: Math.PI / 2, credit: '封面：Chatsven · 公共领域', source: 'https://commons.wikimedia.org/wiki/File:Macao-PASSPORT.svg' },
 };
 const $ = selector => document.querySelector(selector);
 const buttons = [...document.querySelectorAll('[data-passport]')];
@@ -97,7 +99,7 @@ function initialize() {
       }, reject));
     },
     prepareModel(object, id) {
-      // Both files use metres. Taiwan's front is +Y in glTF; rotate it to +Z.
+      // All files use metres. The new book models face +Y in glTF; rotate them to +Z.
       object.rotation.x = passports[id].rotationX;
       const anisotropy = renderer.capabilities.getMaxAnisotropy();
       object.traverse(mesh => {
@@ -137,6 +139,8 @@ function initialize() {
       $('#passport-country').textContent = definition.country;
       $('#passport-title').textContent = definition.title;
       $('#passport-description').textContent = definition.description;
+      $('#asset-credit').textContent = definition.credit;
+      $('#asset-credit').href = definition.source;
       document.title = `${definition.title} · 护照 3D 展示`;
       container.setAttribute('aria-label', `可旋转缩放的${definition.title}三维模型`);
       container.setAttribute('aria-busy', 'false');
