@@ -9,6 +9,8 @@ const passports = {
   taiwan: { title: '台湾护照', country: 'TAIWAN', description: '墨绿封皮 · 金色烫印 · 分层纸页', url: './taiwan_passport.glb', filename: 'taiwan_passport.glb', rotationX: Math.PI / 2, credit: '封面参考：领事事务局', source: 'https://www.boca.gov.tw/cp-296-5848-c6720-1.html' },
   'hong-kong': { title: '香港护照', country: 'HONG KONG SPECIAL ADMINISTRATIVE REGION', description: '深蓝封皮 · 金色烫印 · 分层纸页', url: './hong_kong_passport.glb', filename: 'hong_kong_passport.glb', rotationX: Math.PI / 2, credit: '封面：Chatsven · CC BY-SA 4.0', source: 'https://github.com/oi789113/passport/blob/main/ASSET_LICENSES.md#香港护照' },
   macau: { title: '澳门护照', country: 'MACAO SPECIAL ADMINISTRATIVE REGION', description: '深绿封皮 · 金色烫印 · 分层纸页', url: './macau_passport.glb', filename: 'macau_passport.glb', rotationX: Math.PI / 2, credit: '封面：Chatsven · 公共领域', source: 'https://commons.wikimedia.org/wiki/File:Macao-PASSPORT.svg' },
+  canada: { title: '加拿大护照', country: 'CANADA', description: '深蓝封皮 · 枫叶烫金 · 分层纸页', url: './canada_passport.glb', filename: 'canada_passport.glb', rotationX: Math.PI / 2, credit: '封面参考：加拿大政府 · 2023', source: 'https://github.com/oi789113/passport/blob/main/ASSET_LICENSES.md#加拿大护照' },
+  switzerland: { title: '瑞士护照', country: 'SWITZERLAND', description: '红色封皮 · 白色印字 · 地形压纹', url: './swiss_passport.glb', filename: 'swiss_passport.glb', rotationX: Math.PI / 2, credit: '封面参考：fedpol · 2022', source: 'https://commons.wikimedia.org/wiki/File:Schweizer_Pass_22.jpg' },
 };
 const $ = selector => document.querySelector(selector);
 const buttons = [...document.querySelectorAll('[data-passport]')];
@@ -45,7 +47,7 @@ function initialize() {
   }
   light(0xffe7bd, 2, -.12, .18, .2);
   light(0x9ec6ff, .7, .15, -.05, .12);
-  light(0xffffff, 1, -.1, -.1, -.02);
+  light(0xffffff, 1, -.1, -.1, -.16);
 
   const controls = new OrbitControls(camera, renderer.domElement);
   controls.enableDamping = true;
@@ -80,7 +82,13 @@ function initialize() {
     camera.updateProjectionMatrix();
     const size = bounds ? bounds.getSize(new THREE.Vector3()) : new THREE.Vector3(.088, .125, .005);
     const tanHalf = Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
-    fitDistance = Math.max(.26, size.y * .6 / tanHalf, size.x * .6 / (tanHalf * camera.aspect));
+    // Reserve room for the two-row selector and caption on touch screens.
+    const topSpace = width <= 650 ? 154 : 120;
+    const bottomSpace = height < 550 ? 100 : 200;
+    const visibleFraction = width <= 1050 ? Math.max(.25, (height - topSpace - bottomSpace) / height) : 1;
+    if (width <= 1050) camera.setViewOffset(width, height, 0, (bottomSpace - topSpace) / 2, width, height);
+    else camera.clearViewOffset();
+    fitDistance = Math.max(.26, size.y * (width <= 1050 ? .55 : .6) / (tanHalf * visibleFraction), size.x * .6 / (tanHalf * camera.aspect));
     controls.minDistance = .11;
     controls.maxDistance = Math.max(.6, fitDistance * 1.8);
     if (camera.position.lengthSq()) {

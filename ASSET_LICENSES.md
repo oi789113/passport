@@ -23,3 +23,11 @@
 ## 澳门护照
 
 封面矢量参考 Chatsven 的 [Macao-PASSPORT.svg](https://commons.wikimedia.org/wiki/File:Macao-PASSPORT.svg)，Wikimedia Commons 标记为公共领域（PD-PRC-exempt）。字形与排版另以 [Macau Biom Passport.jpg](https://commons.wikimedia.org/wiki/File:Macau_Biom_Passport.jpg) 实物照片核对。重建包含排版校准、封皮与烫金材质、书册几何。
+
+## 加拿大护照
+
+采用 2023 年普通护照封面外观，参考[加拿大政府公布的新版护照特征](https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/new-passport-features.html)及其正背面图。正面图案另参考 [Canadian passport (official; 2023).svg](https://en.wikipedia.org/wiki/File:Canadian_passport_(official;_2023).svg)。原始封面图案版权为 Government of Canada（Crown copyright）。本项目制作了书册几何、封皮颗粒、烫金材质和封底枫叶细节。
+
+## 瑞士护照
+
+采用 2022 年版封面，参考 fedpol 的官方设计及 [Schweizer Pass 22.jpg](https://commons.wikimedia.org/wiki/File:Schweizer_Pass_22.jpg) 扫描；原作品作者为 Schweizerische Eidgenossenschaft / Bundesamt für Polizei（fedpol），扫描上传者 Leichtle。Commons 将该扫描标记为公有领域（PD-ineligible）。字体、白色十字、电子护照标志和压纹位置从扫描中提取；书册及材质为重建，封底采用简化的同色封皮。
